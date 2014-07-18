@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='PayZippySDK',
-    version='0.1.0',
+    version='0.1.1',
     author='PayZippy',
     author_email='merchant.care@payzippy.com',
     packages=['payzippysdk'],

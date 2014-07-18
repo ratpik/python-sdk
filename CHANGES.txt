@@ -1,1 +1,2 @@
 v0.1.0, 20 February 2014 -- Initial release.
+v0.1.1, 18 July 2014 -- Parameter Update.

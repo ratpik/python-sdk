@@ -81,6 +81,16 @@ def validate_charge_params(params):
             params.get(Constants.HASH_METHOD).upper() in Constants.HASH_METHOD_REQUIREMENTS):
         raise ValueError(Constants.HASH_METHOD_INVALID)
 
+    elif not(params.get(Constants.BUYER_PHONE_NO)) or len(
+            params.get(Constants.BUYER_PHONE_NO)) > Constants.BUYER_PHONE_NO_MAXLEN:
+        raise ValueError(Constants.BUYER_PHONE_NO_INVALID)
+    elif not(params.get(Constants.ITEM_TOTAL)) or len(
+            params.get(Constants.ITEM_TOTAL)) > Constants.ITEM_TOTAL_MAXLEN:
+        raise ValueError(Constants.ITEM_TOTAL_INVALID)
+    elif not(params.get(Constants.ITEM_VERTICAL)) or len(
+            params.get(Constants.ITEM_VERTICAL)) > Constants.ITEM_VERTICAL_MAXLEN:
+        raise ValueError(Constants.ITEM_VERTICAL_INVALID)
+
     # '''
     # Check for payment method specific parameters
     # '''
@@ -123,10 +133,6 @@ def validate_charge_params(params):
             raise ValueError(Constants.EXPIRY_YEAR_INVALID)
 
     # Check for other parameters which enforce max length constraint
-    elif Constants.BUYER_PHONE_NO in param_keys and len(
-            params.get(Constants.BUYER_PHONE_NO)) > Constants.BUYER_PHONE_NO_MAXLEN:
-        raise ValueError(Constants.BUYER_PHONE_NO_INVALID)
-
     elif Constants.BUYER_UNIQUE_ID in param_keys and len(
             params.get(Constants.BUYER_UNIQUE_ID)) > Constants.BUYER_UNIQUE_ID_MAXLEN:
         raise ValueError(Constants.BUYER_UNIQUE_ID_INVALID)

@@ -62,6 +62,16 @@ class ChargingRequest(object):
     def set_transaction_amount(self, transaction_amount):
         self.request_params[Constants.TRANSACTION_AMOUNT] = transaction_amount
 
+    def set_buyer_phone_no(self, buyer_phone_no):
+        self.request_params[Constants.BUYER_PHONE_NO] = buyer_phone_no
+
+    def set_item_total(self, item_total):
+        self.request_params[Constants.ITEM_TOTAL] = item_total
+
+    def set_item_vertical(self, item_vertical):
+        self.request_params[Constants.ITEM_VERTICAL] = item_vertical
+
+
     # ===============================================
     # Optional parameters related to merchant details
     # ===============================================
@@ -87,9 +97,6 @@ class ChargingRequest(object):
     # ============================================
     # Optional parameters related to buyer details
     # ============================================
-
-    def set_buyer_phone_no(self, buyer_phone_no):
-        self.request_params[Constants.BUYER_PHONE_NO] = buyer_phone_no
 
     def set_buyer_unique_id(self, buyer_unique_id):
         self.request_params[Constants.BUYER_UNIQUE_ID] = buyer_unique_id
@@ -159,12 +166,6 @@ class ChargingRequest(object):
 
     def set_sales_channel(self, sales_channel):
         self.request_params[Constants.SALES_CHANNEL] = sales_channel
-
-    def set_item_total(self, item_total):
-        self.request_params[Constants.ITEM_TOTAL] = item_total
-
-    def set_item_vertical(self, item_vertical):
-        self.request_params[Constants.ITEM_VERTICAL] = item_vertical
 
     def set_sms_notify_number(self, sms_notify_number):
         self.request_params[Constants.SMS_NOTIFY_NUMBER] = sms_notify_number
